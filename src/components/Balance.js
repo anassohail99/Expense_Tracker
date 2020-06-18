@@ -44,17 +44,17 @@ function Balance() {
       <h2>Your Balance</h2>
       <div className="balance-amount">
         <h3 className={balanceColor}>
-          Rs{(totalIncome - totalExpense).toFixed(2)}
+          ${(totalIncome - totalExpense).toFixed(2)}
         </h3>
       </div>
       <div className="income-expense">
         <div className="plus">
           <h3>Income</h3>
-          <p>+Rs{checkLength(totalIncome)}</p>
+          <p>+${checkLength(totalIncome)}</p>
         </div>
         <div className="minus">
           <h3>Expense</h3>
-          <p>-Rs{checkLength(totalExpense)}</p>
+          <p>-${checkLength(totalExpense)}</p>
         </div>
       </div>
     </div>
