@@ -9,17 +9,25 @@ import "./App.css";
 
 const App = () => {
   return (
-    <GlobalContextProvider>
-      <div className="container">
-        <div className="app-wrapper">
-          <Header />
-          <Balance />
-          <IncomeList />
-          <ExpenseList />
-          <AddTransaction />
-        </div>
+    <div>
+      <div className="section">
+        <GlobalContextProvider>
+          <div className="row">
+            <div className="col-lg-4">
+              <Header />
+              <Balance />
+            </div>
+            <div className="col-lg-8">
+              <AddTransaction />
+              <div className="row">
+                <IncomeList />
+                <ExpenseList />
+              </div>
+            </div>
+          </div>
+        </GlobalContextProvider>
       </div>
-    </GlobalContextProvider>
+    </div>
   );
 };
 

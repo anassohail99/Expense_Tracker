@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+// import coinsImage from "../images/coins.png";
 
-const Balance = () => {
+function Balance() {
   const { incomeTransactions, expenseTransactions } = useContext(GlobalContext);
 
   const incomeAmounts = incomeTransactions.map(
@@ -16,26 +17,50 @@ const Balance = () => {
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
 
-  const totalExpenses = expenseAmounts
+  const totalExpense = expenseAmounts
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
+
+  const balance = totalIncome - totalExpense;
+
+  let balanceColor;
+  if (balance > 0) {
+    balanceColor = "plus";
+  } else if (balance < 0) {
+    balanceColor = "minus";
+  } else {
+    balanceColor = "";
+  }
+
+  const checkLength = (num) => {
+    if (num.length > 8) {
+      return Number(num).toExponential(2);
+    } else {
+      return num;
+    }
+  };
 
   return (
     <div className="balance">
       <h2>Your Balance</h2>
-      <h3>Rs{(totalIncome - totalExpenses).toFixed(2)}</h3>
+      <div className="balance-amount">
+        {/* <img src={coinsImage} alt="coins" width="50px" height="50px"></img> */}
+        <h3 className={balanceColor}>
+          ${(totalIncome - totalExpense).toFixed(2)}
+        </h3>
+      </div>
       <div className="income-expense">
         <div className="plus">
           <h3>Income</h3>
-          <p>+Rs{totalIncome}</p>
+          <p>+${checkLength(totalIncome)}</p>
         </div>
         <div className="minus">
-          <h3>Expenses</h3>
-          <p>-Rs{totalExpenses}</p>
+          <h3>Expense</h3>
+          <p>-${checkLength(totalExpense)}</p>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Balance;

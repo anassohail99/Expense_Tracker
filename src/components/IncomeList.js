@@ -8,16 +8,18 @@ const IncomeList = () => {
   console.log(incomeTransactions);
 
   return (
-    <div className="transactions transactions-income">
-      <h2>Transaction History</h2>
-      <ul className="transaction-list">
-        {incomeTransactions.map(incomeTransaction => (
-          <IncomeTransaction
-            key={incomeTransaction.id}
-            incomeTransaction={incomeTransaction}
-          />
-        ))}
-      </ul>
+    <div className="col-md-6">
+      <div className="transactions transactions-income">
+        <h2>Transaction History</h2>
+        <ol className="transaction-list">
+          {incomeTransactions.map((incomeTransaction) => (
+            <IncomeTransaction
+              key={incomeTransaction.id}
+              incomeTransaction={incomeTransaction}
+            />
+          ))}
+        </ol>
+      </div>
     </div>
   );
 };

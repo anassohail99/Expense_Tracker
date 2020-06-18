@@ -8,16 +8,18 @@ const ExpenseList = () => {
   console.log(expenseTransactions);
 
   return (
-    <div className="transactions transactions-expense">
-      <h2>Transaction History</h2>
-      <ul className="transaction-list">
-        {expenseTransactions.map(expenseTransaction => (
-          <ExpenseTransaction
-            key={expenseTransaction.id}
-            expenseTransaction={expenseTransaction}
-          />
-        ))}
-      </ul>
+    <div className="col-md-6">
+      <div className="transactions transactions-expense">
+        <h2>Transaction History</h2>
+        <ol className="transaction-list">
+          {expenseTransactions.map((expenseTransaction) => (
+            <ExpenseTransaction
+              key={expenseTransaction.id}
+              expenseTransaction={expenseTransaction}
+            />
+          ))}
+        </ol>
+      </div>
     </div>
   );
 };

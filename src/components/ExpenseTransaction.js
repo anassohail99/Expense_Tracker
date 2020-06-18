@@ -5,7 +5,7 @@ const ExpenseTransaction = ({ expenseTransaction }) => {
   const { deleteTransaction } = useContext(GlobalContext);
 
   return (
-    <li className="transaction">
+    <li className="transaction transactions-expense">
       <span className="transaction-text">{expenseTransaction.expenseText}</span>
       <span className="transaction-amount">
         Rs{expenseTransaction.expenseAmount}
