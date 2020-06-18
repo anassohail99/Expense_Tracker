@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
-// import coinsImage from "../images/coins.png";
 
 function Balance() {
   const { incomeTransactions, expenseTransactions } = useContext(GlobalContext);
@@ -44,19 +43,18 @@ function Balance() {
     <div className="balance">
       <h2>Your Balance</h2>
       <div className="balance-amount">
-        {/* <img src={coinsImage} alt="coins" width="50px" height="50px"></img> */}
         <h3 className={balanceColor}>
-          ${(totalIncome - totalExpense).toFixed(2)}
+          Rs{(totalIncome - totalExpense).toFixed(2)}
         </h3>
       </div>
       <div className="income-expense">
         <div className="plus">
           <h3>Income</h3>
-          <p>+${checkLength(totalIncome)}</p>
+          <p>+Rs{checkLength(totalIncome)}</p>
         </div>
         <div className="minus">
           <h3>Expense</h3>
-          <p>-${checkLength(totalExpense)}</p>
+          <p>-Rs{checkLength(totalExpense)}</p>
         </div>
       </div>
     </div>
