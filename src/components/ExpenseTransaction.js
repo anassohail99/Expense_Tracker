@@ -8,7 +8,7 @@ const ExpenseTransaction = ({ expenseTransaction }) => {
     <li className="transaction transactions-expense">
       <span className="transaction-text">{expenseTransaction.expenseText}</span>
       <span className="transaction-amount">
-        Rs{expenseTransaction.expenseAmount}
+        ${expenseTransaction.expenseAmount}
       </span>
       <button
         onClick={() => deleteTransaction(expenseTransaction.id)}
